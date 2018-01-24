@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import firebase from 'firebase';
 import reducers from './src/reducers';
+import LoginForm from './src/components/LoginForm';
 
 export default class App extends React.Component {
   componentWillMount() {
@@ -31,7 +32,7 @@ export default class App extends React.Component {
         /* eslint-disable no-undef */
       >
         <View style={styles.container}>
-          <Text>I will finish this app!</Text>
+          <LoginForm />
         </View>
       </Provider>
     );
@@ -42,7 +43,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
   },
 });
