@@ -31,17 +31,8 @@ export default class App extends React.Component {
         /* eslint-disable no-underscore-dangle */
         /* eslint-disable no-undef */
       >
-        <View style={styles.container}>
-          <LoginForm />
-        </View>
+        <LoginForm />
       </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
