@@ -31,7 +31,9 @@ export default class App extends React.Component {
         /* eslint-disable no-underscore-dangle */
         /* eslint-disable no-undef */
       >
-        <LoginForm />
+        <View style={{ justifyContent: 'center', flex: 1 }}>
+          <LoginForm />
+        </View>
       </Provider>
     );
   }
