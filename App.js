@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import firebase from 'firebase';
-import reducers from './src/reducers';
 import LoginForm from './src/components/LoginForm';
+import configureStore from './src/ConfigureStore';
+
 
 export default class App extends React.Component {
   componentWillMount() {
@@ -20,17 +20,9 @@ export default class App extends React.Component {
     firebase.initializeApp(config);
   }
   render() {
+    const store = configureStore();
     return (
-      /* eslint-disable no-underscore-dangle */
-      /* eslint-disable no-undef */
-      <Provider
-        store={
-        createStore(reducers,
-        window.__REDUX_DEVTOOLS_EXTENSION__ &&
-        window.__REDUX_DEVTOOLS_EXTENSION__())}
-        /* eslint-disable no-underscore-dangle */
-        /* eslint-disable no-undef */
-      >
+      <Provider store={store}>
         <View style={{ justifyContent: 'center', flex: 1 }}>
           <LoginForm />
         </View>
