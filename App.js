@@ -1,10 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import firebase from 'firebase';
-import LoginForm from './src/components/LoginForm';
 import configureStore from './src/ConfigureStore';
-
+import LoginForm from './src/components/LoginForm';
 
 export default class App extends React.Component {
   componentWillMount() {
@@ -23,9 +21,7 @@ export default class App extends React.Component {
     const store = configureStore();
     return (
       <Provider store={store}>
-        <View style={{ justifyContent: 'center', flex: 1 }}>
-          <LoginForm />
-        </View>
+        <LoginForm />
       </Provider>
     );
   }

@@ -24,9 +24,12 @@ export const passwordChanged = (text) => {
 export const loginUser = ({ email, password }) => {
   return (dispatch) => {
     dispatch({ type: LOGIN_USER });
+
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => loginUserSuccess(dispatch, user))
-      .catch(() => {
+      .catch((error) => {
+        console.log(error);
+
         firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
           .catch(() => loginUserFail(dispatch));
@@ -34,17 +37,13 @@ export const loginUser = ({ email, password }) => {
   };
 };
 
-// helper function to dispatch sucess
+const loginUserFail = (dispatch) => {
+  dispatch({ type: LOGIN_USER_FAIL });
+};
+
 const loginUserSuccess = (dispatch, user) => {
   dispatch({
     type: LOGIN_USER_SUCCESS,
     payload: user
-  });
-};
-
-// helper function to dispatch fail
-const loginUserFail = (dispatch) => {
-  dispatch({
-    type: LOGIN_USER_FAIL
   });
 };
