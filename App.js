@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import firebase from 'firebase';
 import configureStore from './src/ConfigureStore';
-import LoginForm from './src/components/LoginForm';
+import Router from './src/Router';
 
 export default class App extends React.Component {
   componentWillMount() {
@@ -17,11 +17,12 @@ export default class App extends React.Component {
     };
     firebase.initializeApp(config);
   }
+
   render() {
     const store = configureStore();
     return (
       <Provider store={store}>
-        <LoginForm />
+        <Router />
       </Provider>
     );
   }
