@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "manager",
-    "description": "This project is really great.",
+    "description": "An application for manager to manage their employees",
     "slug": "manager",
     "privacy": "public",
     "sdkVersion": "25.0.0",
