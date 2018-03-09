@@ -30,3 +30,7 @@ Created this app as a part of the complete react native and redux course from ud
 1. Managing react native state with redux
 2. Whole redux architecture (How it works)
 3. Working with firebase data structure.
+
+## Future Plan
+
+Try using react-navigation instead of react-native-router-flux for navigation purpose
