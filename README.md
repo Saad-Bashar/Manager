@@ -5,5 +5,3 @@ Created this app as a part of the complete react native and redux course from ud
 
 
 # Demonstration
-
-
