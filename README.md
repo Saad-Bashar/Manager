@@ -1,4 +1,4 @@
-## manager
+## Manager
 
 React native demo application for managers to manage their employees
 
